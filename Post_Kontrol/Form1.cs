@@ -15,12 +15,12 @@ namespace Post_Kontrol
         public Form1()
         {
             InitializeComponent();
-            /*
+            
             notifyIcon1.BalloonTipTitle = "İpucu - Post Kontrol Programı";
             notifyIcon1.BalloonTipText = "Metin kutularına veya url listesine çift tıklayarak renk menüsünü açabilirsiniz.";
             notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
             notifyIcon1.ShowBalloonTip(2000);
-          */
+          
         }
 
         public void _2indirme_bitti(object sender, DownloadStringCompletedEventArgs e)

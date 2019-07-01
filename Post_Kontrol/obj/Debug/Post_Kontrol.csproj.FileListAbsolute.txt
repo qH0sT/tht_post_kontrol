@@ -1,0 +1,15 @@
+c:\users\harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\bin\Debug\Post_Kontrol.exe.config
+c:\users\harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\bin\Debug\Post_Kontrol.exe
+c:\users\harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\bin\Debug\Post_Kontrol.pdb
+c:\users\harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\bin\Debug\HtmlAgilityPack.dll
+c:\users\harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\bin\Debug\HtmlAgilityPack.pdb
+c:\users\harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\bin\Debug\HtmlAgilityPack.xml
+c:\users\harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\obj\Debug\Post_Kontrol.csprojResolveAssemblyReference.cache
+c:\users\harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\obj\Debug\Post_Kontrol.Form1.resources
+c:\users\harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\obj\Debug\Post_Kontrol.Properties.Resources.resources
+c:\users\harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\obj\Debug\Post_Kontrol.csproj.GenerateResource.Cache
+c:\users\harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\obj\Debug\Post_Kontrol.exe
+c:\users\harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\obj\Debug\Post_Kontrol.pdb
+C:\Users\Harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\obj\Debug\Post_Kontrol.Hakkinda.resources
+C:\Users\Harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\bin\Debug\Tulpep.NotificationWindow.dll
+C:\Users\Harun\documents\visual studio 2015\Projects\Post_Kontrol\Post_Kontrol\obj\Debug\Post_Kontrol.Karsilama.resources

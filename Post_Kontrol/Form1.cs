@@ -659,37 +659,37 @@ namespace Post_Kontrol
                 case 1:
                _konu_urlsi = "https://www.turkhackteam.org/sosyal-medya-ve-sosyal-platformlar/";
                _substring_baslangici = _konu_urlsi.Length;
-               textBox2.Text = "Filtrelenicek kelime(ler)/cümle(ler)";
+               textBox2.Text = "Filtrelenicek kelime(ler)";
                break;
                case 2:
                _konu_urlsi = "https://www.turkhackteam.org/google-android/";
                _substring_baslangici = _konu_urlsi.Length;
-               textBox2.Text = "Filtrelenicek kelime(ler)/cümle(ler)";
+               textBox2.Text = "Filtrelenicek kelime(ler)";
                break;
                case 3:
               _konu_urlsi = "https://www.turkhackteam.org/grafik-tasarimi/";
               _substring_baslangici = _konu_urlsi.Length;
-               textBox2.Text = "Filtrelenicek kelime(ler)/cümle(ler)";
+               textBox2.Text = "Filtrelenicek kelime(ler)";
                break;
                case 4:
               _konu_urlsi = "https://www.turkhackteam.org/network/";
               _substring_baslangici = _konu_urlsi.Length;
-              textBox2.Text = "Filtrelenicek kelime(ler)/cümle(ler)";
+              textBox2.Text = "Filtrelenicek kelime(ler)";
                break;
                case 5:
                _konu_urlsi = "https://www.turkhackteam.org/web-server-guvenligi/";
                _substring_baslangici = _konu_urlsi.Length;
-               textBox2.Text = "Filtrelenicek kelime(ler)/cümle(ler)";
+               textBox2.Text = "Filtrelenicek kelime(ler)";
                break;
                case 6:
               _konu_urlsi = "https://www.turkhackteam.org/off-topic/";
               _substring_baslangici = _konu_urlsi.Length;
-               textBox2.Text = "Nasıl hacker olurum";
+               textBox2.Text = "Filtrelenicek kelime(ler)";
                break;
                case 7:
               _konu_urlsi = "https://www.turkhackteam.org/trojan-ve-virusler/";
               _substring_baslangici = _konu_urlsi.Length;
-               textBox2.Text = "Filtrelenicek kelime(ler)/cümle(ler)";
+               textBox2.Text = "Filtrelenicek kelime(ler)";
               break;
             }
             label9.Text = "Seçili Kategori: " + comboBox1.SelectedItem.ToString();

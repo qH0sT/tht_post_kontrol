@@ -493,9 +493,11 @@ namespace Post_Kontrol
             new Hakkinda().Show();
         }
 
+         bool w = true;
         private void gizleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Visible = !this.Visible;
+            if (w) { Opacity = 0; w = false; ShowInTaskbar = false; } else { Opacity = 100; w = true; ShowInTaskbar = true; }
+            
         }
         string url2 = string.Empty;
         private void notifyIcon1_BalloonTipClicked(object sender, EventArgs e)

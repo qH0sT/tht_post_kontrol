@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
@@ -15,12 +15,12 @@ namespace Post_Kontrol
         public Form1()
         {
             InitializeComponent();
-            
+            /*
             notifyIcon1.BalloonTipTitle = "İpucu - Post Kontrol Programı";
             notifyIcon1.BalloonTipText = "Metin kutularına veya url listesine çift tıklayarak renk menüsünü açabilirsiniz.";
             notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
             notifyIcon1.ShowBalloonTip(2000);
-          
+          */
         }
 
         public void _2indirme_bitti(object sender, DownloadStringCompletedEventArgs e)
@@ -112,7 +112,8 @@ namespace Post_Kontrol
                }
 
                 richTextBox1.Text = richTextBox1.Text.Replace("====>", "\n\nPost İçeriği====>");
-                timer1.Start();
+                if (button3.Enabled) { timer1.Start(); }
+               
             }
             catch (Exception ex) { button2.Enabled = true; button3.Enabled = false; MessageBox.Show(ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
         }
@@ -354,7 +355,7 @@ namespace Post_Kontrol
                                      pf.Click += new EventHandler(notifyIcon1_BalloonTipClicked);
                                      pf.Image = Image.FromFile("ico.ico");
                                      pf.ImageSize = new Size(32, 32);
-                                     pf.TitleText = "Konuda Başlığında Gereksiz Kelime Bulundu";
+                                     pf.TitleText = "Konu Başlığında Gereksiz Kelime Bulundu";
                                      pf.ContentText =
                                      "Bulunan Kelime: " + baslik[c] +"\nGereksiz kelime içeren konu sayısı: "+ say.ToString() +
                                      "\nKonu Linki: " + listBox1.Items[l].ToString().Replace("ç", "c").Replace("ı", "i");
@@ -379,8 +380,11 @@ namespace Post_Kontrol
                    }
                  
                 }
-                timer1.Enabled = true;
-                timer1.Start();
+                if(button3.Enabled) {
+                    timer1.Enabled = true;
+                    timer1.Start();
+                }
+                
                 say = 0;
             }
             catch (Exception ex) { button2.Enabled = true; button3.Enabled = false; MessageBox.Show(ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
@@ -492,8 +496,7 @@ namespace Post_Kontrol
         {
             new Hakkinda().Show();
         }
-
-         bool w = true;
+        bool w = true;
         private void gizleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (w) { Opacity = 0; w = false; ShowInTaskbar = false; } else { Opacity = 100; w = true; ShowInTaskbar = true; }
@@ -655,45 +658,39 @@ namespace Post_Kontrol
             {
                 case 0:
                _konu_urlsi = "https://www.turkhackteam.org/tht-yardim-merkezi/";
-              _substring_baslangici = _konu_urlsi.Length;
                textBox2.Text = "Acil,lütfen,yardım";
                 break;
                 case 1:
                _konu_urlsi = "https://www.turkhackteam.org/sosyal-medya-ve-sosyal-platformlar/";
-               _substring_baslangici = _konu_urlsi.Length;
                textBox2.Text = "Filtrelenicek kelime(ler)";
                break;
                case 2:
                _konu_urlsi = "https://www.turkhackteam.org/google-android/";
-               _substring_baslangici = _konu_urlsi.Length;
                textBox2.Text = "Filtrelenicek kelime(ler)";
-               break;
+                    break;
                case 3:
               _konu_urlsi = "https://www.turkhackteam.org/grafik-tasarimi/";
               _substring_baslangici = _konu_urlsi.Length;
                textBox2.Text = "Filtrelenicek kelime(ler)";
-               break;
+                    break;
                case 4:
               _konu_urlsi = "https://www.turkhackteam.org/network/";
-              _substring_baslangici = _konu_urlsi.Length;
               textBox2.Text = "Filtrelenicek kelime(ler)";
-               break;
+                    break;
                case 5:
                _konu_urlsi = "https://www.turkhackteam.org/web-server-guvenligi/";
-               _substring_baslangici = _konu_urlsi.Length;
                textBox2.Text = "Filtrelenicek kelime(ler)";
-               break;
+                    break;
                case 6:
               _konu_urlsi = "https://www.turkhackteam.org/off-topic/";
-              _substring_baslangici = _konu_urlsi.Length;
                textBox2.Text = "Filtrelenicek kelime(ler)";
-               break;
+                    break;
                case 7:
               _konu_urlsi = "https://www.turkhackteam.org/trojan-ve-virusler/";
-              _substring_baslangici = _konu_urlsi.Length;
                textBox2.Text = "Filtrelenicek kelime(ler)";
-              break;
+               break;
             }
+            _substring_baslangici = _konu_urlsi.Length;
             label9.Text = "Seçili Kategori: " + comboBox1.SelectedItem.ToString();
             b = 0;
         }
@@ -706,24 +703,3 @@ namespace Post_Kontrol
 }
 
 //https://www.youtube.com/watch?v=akmZj4CyPkw  
-
-
-/*
-  try
-  {
-  if (!link.GetAttributeValue("href", "Gösterilecek veri yok.").Contains("misc")  //sosyal medya bölümü
-  && a > 97 && link.GetAttributeValue("href", "Gösterilecek veri yok.").Substring(64).Contains("-") && !link.GetAttributeValue("href", "Gösterilecek veri yok.").Contains("#post")
-  && !link.GetAttributeValue("href", "Gösterilecek veri yok.").Contains("members")
-  && !link.GetAttributeValue("href", "Gösterilecek veri yok.").Contains("forumdisplay.php")) //.../index2.html gibi adresleri çekmemesi için.
-         {
-             if (!listBox1.Items.Contains(link.GetAttributeValue("href", "Gösterilecek veri yok.")))
-             {
-                 listBox1.Items.Add(link.GetAttributeValue("href", "Gösterilecek veri yok."));
-             }
-
-         }
-     }
-     catch (Exception) { }
-
- }
- */

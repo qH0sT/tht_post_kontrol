@@ -336,11 +336,10 @@ namespace Post_Kontrol
                             }
 
                          string num = listBox1.Items[l].ToString().Substring(_substring_baslangici, 7);
-                         if (!aytimler.Contains(num))
-                         {
-                             for (int c = 0; c < baslik.Length; c++)
+
+                           for (int c = 0; c < baslik.Length; c++)
                              {
-                                 if (listBox1.Items[l].ToString().Substring(_substring_baslangici + 7 + 1).ToLower().Contains(baslik[c].ToLower().Replace("ç", "c").Replace("ğ", "g").Replace("ş", "s").Replace("ö", "o").Replace("ü", "u").Replace("ı", "i")))
+                                 if (listBox1.Items[l].ToString().Substring(_substring_baslangici + 7 + 1).ToLower().Contains(baslik[c].ToLower().Replace("ç", "c").Replace("ğ", "g").Replace("ş", "s").Replace("ö", "o").Replace("ü", "u").Replace("ı", "i")) && !aytimler.Contains(num))
                                  {
                                     if (checkBox3.Checked) {
 
@@ -374,12 +373,12 @@ namespace Post_Kontrol
                                  }
                              }
 
-                         }
                      }
                        
                    }
                  
                 }
+
                 if(button3.Enabled) {
                     timer1.Enabled = true;
                     timer1.Start();
@@ -393,44 +392,11 @@ namespace Post_Kontrol
         string _konu_urlsi = null;
         string[] baslik = new string[] { "X" };
         int say = 0;
-
-
         public void _wc_indirme_islemi_bitti(object sender, DownloadStringCompletedEventArgs e)
         {
-
             try
             {
                 mesajlari_cek(e.Result);
-
-                /*
-                 * //Test alanı
-                int a = 0;
-                HtmlAgilityPack.HtmlDocument _dokuman_ = new HtmlAgilityPack.HtmlDocument();
-                _dokuman_.LoadHtml(e.Result);
-                foreach (HtmlNode link in _dokuman_.DocumentNode.SelectNodes("//a[@href]"))
-                {
-                    a = a + 1;
-                   
-                    try
-                    {
-                        if (!link.GetAttributeValue("href", "Gösterilecek veri yok.").Contains("misc")  //Network bölümü
-                        && a > 115 && link.GetAttributeValue("href", "Gösterilecek veri yok.").Substring("https://www.turkhackteam.org/trojan-ve-virusler/".Length).Contains("-") && !link.GetAttributeValue("href", "Gösterilecek veri yok.").Contains("#post")
-                        && !link.GetAttributeValue("href", "Gösterilecek veri yok.").Contains("members")
-                        && !link.GetAttributeValue("href", "Gösterilecek veri yok.").Contains("forumdisplay.php")
-                        && !link.GetAttributeValue("href", "Gösterilecek veri yok.").Contains("pomera")
-                        && !link.GetAttributeValue("href", "Gösterilecek veri yok.").Contains("#information")
-                        && !link.GetAttributeValue("href", "Gösterilecek veri yok.").Contains("#turkhackteam-under-ground"))
-                        {
-                            if (!listBox1.Items.Contains(link.GetAttributeValue("href", "Gösterilecek veri yok.")))
-                            {
-                                listBox1.Items.Add(link.GetAttributeValue("href", "Gösterilecek veri yok."));
-                            }
-
-                        }
-                    }
-                    catch (Exception) { }
-                }
-               */
             }
             catch (Exception ex) { button2.Enabled = true; button3.Enabled = false; MessageBox.Show(ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
         }
@@ -450,10 +416,9 @@ namespace Post_Kontrol
            {
               baslik[0] = textBox2.Text;
            }
-           else { baslik = textBox2.Text.Split(','); }
-           richTextBox1.Text = string.Empty;
+            else { baslik = textBox2.Text.Split(','); }
+            richTextBox1.Text = string.Empty;
             Uri url = new Uri(_konu_urlsi);
-            //Uri url = new Uri("https://www.turkhackteam.org/trojan-ve-virusler/"); test içindi.
             WebClient _wc_ = new WebClient();
            _wc_.Headers.Add("User-Agent: Other");
            _wc_.Encoding = Encoding.Default;
@@ -701,5 +666,3 @@ namespace Post_Kontrol
         }
     }
 }
-
-//https://www.youtube.com/watch?v=akmZj4CyPkw  
